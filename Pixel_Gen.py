@@ -17,17 +17,23 @@ def gen_data(sprite, delimiter):
 	current = sprite[0]
 	count = 0
 	total = 0
+	print '================================================='
+	sys.stdout.write("[")
 	for i in range(0, len(sprite)):
-		if (get_color_index(sprite[i], palatte) == get_color_index(current, palatte)):
-			count = count + 1
+		if (i == len(sprite)-1):
+			sys.stdout.write("[" + str(sprite[i][0]) + ", " + str(sprite[i][1]) + ", " + str(sprite[i][2]) + ", " + str(sprite[i][3]) + "]]\n")
 		else:
-			print "color " + str(get_color_index(current, palatte)) + ", " + str(count) + " times\n"
-			current = sprite[i]
-			total = total + count
-			count = 1
-	print "color" + str(get_color_index(current, palatte)) + ", " + str(count) + " times\n"
-	total = total + count
-	print "total: " + str(total)
+			sys.stdout.write("[" + str(sprite[i][0]) + ", " + str(sprite[i][1]) + ", " + str(sprite[i][2]) + ", " + str(sprite[i][3]) + "], ")
+		# if (get_color_index(sprite[i], palatte) == get_color_index(current, palatte)):
+		# 	count = count + 1
+		# else:
+		# 	print "color " + str(get_color_index(current, palatte)) + ", " + str(count) + " times\n"
+		# 	current = sprite[i]
+		# 	total = total + count
+		# 	count = 1
+	# print "color" + str(get_color_index(current, palatte)) + ", " + str(count) + " times\n"
+	# total = total + count
+	# print "total: " + str(total)
 
 def main():
 	# Input checking
